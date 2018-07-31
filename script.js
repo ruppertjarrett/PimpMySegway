@@ -78,10 +78,14 @@ function add_nav() {
 }
 
 function add_containers() {
+    var container = document.createElement("div");
+    container.setAttribute("id", "container");
+    var element = document.getElementById("content");
+    element.appendChild(container);
+
     var leftContainer = document.createElement("div");
     leftContainer.setAttribute("id", "left_Container");
-    var element = document.getElementById("content");
-    element.appendChild(leftContainer);
+    container.appendChild(leftContainer);
 
     var logo = document.createElement("img");
     logo.setAttribute("id", "logo");
@@ -92,7 +96,7 @@ function add_containers() {
 
     var middleContainer = document.createElement("div");
     middleContainer.setAttribute("id", "middle_container");
-    element.appendChild(middleContainer);
+    container.appendChild(middleContainer);
 
     var price = document.createElement("div");
     price.setAttribute("id", "price");
@@ -103,7 +107,7 @@ function add_containers() {
 
     var rightContainer = document.createElement("div");
     rightContainer.setAttribute("id", "right_container");
-    element.appendChild(rightContainer);
+    container.appendChild(rightContainer);
 
     var options = document.createElement("div");
     options.setAttribute("id", "options");
@@ -139,10 +143,15 @@ function add_containers() {
 }
 
 function add_footer() {
+    var footer = document.createElement("div");
+    footer.setAttribute("id", "footer");
+    var element = document.getElementById("content");
+    element.appendChild(footer);
+
     var leftFooter = document.createElement("div");
     leftFooter.setAttribute("id", "left_footer");
     var element = document.getElementById("content");
-    element.appendChild(leftFooter);
+    footer.appendChild(leftFooter);
 
     var item_list = document.createElement("div");
     item_list.setAttribute("id", "item_list");
@@ -153,7 +162,7 @@ function add_footer() {
 
     var middleFooter = document.createElement("div");
     middleFooter.setAttribute("id", "middle_footer");
-    element.appendChild(middleFooter);
+    footer.appendChild(middleFooter);
 
     var deal = document.createElement("div");
     deal.setAttribute("id", "deal");
@@ -164,7 +173,7 @@ function add_footer() {
 
     var rightFooter = document.createElement("div");
     rightFooter.setAttribute("id", "right_footer");
-    element.appendChild(rightFooter);
+    footer.appendChild(rightFooter);
 
     var checkout = document.createElement("div");
     checkout.setAttribute("id", "checkout");
