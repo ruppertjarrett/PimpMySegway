@@ -17,9 +17,9 @@ function add_nav() {
     var logo = document.createElement("div");
     logo.setAttribute("id", "logo");
     li_image.appendChild(logo);
-    var image_placeholder = document.createTextNode("image goes here");
+    var logo_placeholder = document.createTextNode("logo goes here");
     var logo_image = document.getElementById("logo");
-    logo.appendChild(image_placeholder);
+    logo_image.appendChild(logo_placeholder);
 
     var li_1 = document.createElement("li");
     li_1.setAttribute("id", "li_1");
@@ -87,12 +87,9 @@ function add_containers() {
     leftContainer.setAttribute("id", "left_Container");
     container.appendChild(leftContainer);
 
-    var logo = document.createElement("img");
-    logo.setAttribute("id", "logo");
-    leftContainer.appendChild(logo);
-    var logo_placeholder = document.createTextNode("logo goes here");
-    var logo_div = document.getElementById("logo");
-    logo_div.appendChild(logo_placeholder);
+    var image = document.createElement("img");
+    image.setAttribute("id", "image");
+    leftContainer.appendChild(image);
 
     var middleContainer = document.createElement("div");
     middleContainer.setAttribute("id", "middle_container");
