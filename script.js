@@ -10,9 +10,9 @@ function load(evt) {
     totalCost = 600;
     var image = document.getElementById('image');
     image.style.background = "url('images/Empty.png'), url('images/Tires/Basic.png'), url('images/Body/Whi.png')";
-    document.getElementById("price").textContent = "Total: $" + totalCost;
     image.style.backgroundRepeat = "no-repeat";
     image.style.backgroundSize = "cover";
+    document.getElementById("price").textContent = "Total: $" + totalCost;
 }
 
 function add_nav() {
@@ -41,7 +41,7 @@ function add_nav() {
     var preset_1 = document.createElement("div");
     preset_1.setAttribute("id", "preset_1");
     li_1.appendChild(preset_1);
-    var preset_1_placeholder = document.createTextNode("preset 1 goes here");
+    var preset_1_placeholder = document.createTextNode("Roadster");
     var preset_1_div = document.getElementById("preset_1");
     preset_1.appendChild(preset_1_placeholder);
 
@@ -52,7 +52,7 @@ function add_nav() {
     var preset_2 = document.createElement("div");
     preset_2.setAttribute("id", "preset_2");
     li_2.appendChild(preset_2);
-    var preset_2_placeholder = document.createTextNode("preset 2 goes here");
+    var preset_2_placeholder = document.createTextNode("Huntsman");
     var preset_2_div = document.getElementById("preset_2");
     preset_2.appendChild(preset_2_placeholder);
 
@@ -63,7 +63,7 @@ function add_nav() {
     var preset_3 = document.createElement("div");
     preset_3.setAttribute("id", "preset_3");
     li_3.appendChild(preset_3);
-    var preset_3_placeholder = document.createTextNode("preset 3 goes here");
+    var preset_3_placeholder = document.createTextNode("Plain Jane");
     var preset_3_div = document.getElementById("preset_3");
     preset_3.appendChild(preset_3_placeholder);
 
@@ -74,7 +74,7 @@ function add_nav() {
     var preset_4 = document.createElement("div");
     preset_4.setAttribute("id", "preset_4");
     li_4.appendChild(preset_4);
-    var preset_4_placeholder = document.createTextNode("preset 4 goes here");
+    var preset_4_placeholder = document.createTextNode("Hipster");
     var preset_4_div = document.getElementById("preset_4");
     preset_4.appendChild(preset_4_placeholder);
 
@@ -85,7 +85,7 @@ function add_nav() {
     var preset_5 = document.createElement("div");
     preset_5.setAttribute("id", "preset_5");
     li_5.appendChild(preset_5);
-    var preset_5_placeholder = document.createTextNode("preset 5 goes here");
+    var preset_5_placeholder = document.createTextNode("Total Package");
     var preset_5_div = document.getElementById("preset_5");
     preset_5.appendChild(preset_5_placeholder);
 }
@@ -298,4 +298,75 @@ function optionClick(evt) {
     document.getElementById("item_list").innerHTML += `${option} $${cost} \<br /\>`;
     totalCost += cost;
     document.getElementById("price").textContent = "Total: $" + totalCost;
+}
+
+document.getElementById("preset_1").addEventListener('click', roadster);
+document.getElementById("preset_2").addEventListener('click', huntsman);
+document.getElementById("preset_3").addEventListener('click', plainJane);
+document.getElementById("preset_4").addEventListener('click', hipster);
+document.getElementById("preset_5").addEventListener('click', totalPackage);
+
+function roadster(){
+    var image = document.getElementById('image');
+    image.style.background = "url('images/Empty.png'), url('images/Tires/Basic.png'), url('images/Body/Whi.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+    totalCost = 1800
+    document.getElementById("price").textContent = "Total: $" + totalCost;
+    document.getElementById("item_list").innerHTML = "Red $100 \<br/\> Racing $300 \<br/\> V8 $1200 \<br/\> Headlights $80 \<br/\> GPS $120";
+    image.style.background = "url('images/Empty.png'), url('images/Extra/Headlights.png'), url('images/Extra/GPS.png'), url('images/Tires/Racin.png'), url('images/Body/Red.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+}
+
+function huntsman(){
+    var image = document.getElementById('image');
+    image.style.background = "url('images/Empty.png'), url('images/Tires/Basic.png'), url('images/Body/Whi.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+    totalCost = 1800;
+    document.getElementById("price").textContent = "Total: $" + totalCost;
+    document.getElementById("item_list").innerHTML = "Safety Orange $100 \<br/\> Offroad $300 \<br/\> V8 $1200 \<br/\> Cupholder $40 \<br/\>LED Strip $80 \<br/\>Headlights $80";
+    image.style.background = "url('images/Empty.png'), url('images/Extra/Headlights.png'), url('images/Extra/LEDStrip.png'), url('images/Extra/Cupholder.png'), url('images/Tires/OffRd.png'), url('images/Body/Ora.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+}
+
+function plainJane(){
+    var image = document.getElementById('image');
+    image.style.background = "url('images/Empty.png'), url('images/Tires/Basic.png'), url('images/Body/Whi.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+    totalCost = 500;
+    document.getElementById("price").textContent = "Total: $" + totalCost;
+    document.getElementById("item_list").innerHTML = "White $100 \<br/\> Basic $100 \<br/\> V2 $300 ";
+    image.style.background = "url('images/Empty.png'), url('images/Tires/Basic.png'), url('images/Body/Whi.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+}
+
+function hipster(){
+    var image = document.getElementById('image');
+    image.style.background = "url('images/Empty.png'), url('images/Tires/Basic.png'), url('images/Body/Whi.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+    totalCost = 1060;
+    document.getElementById("price").textContent = "Total: $" + totalCost;
+    document.getElementById("item_list").innerHTML = "Blue $100 \<br/\> Racing $300 \<br/\> V4 $600 \<br/\> Speaker $120 \<br/\> Cupholder $40 ";
+    image.style.background = "url('images/Empty.png'), url('images/Extra/Speaker.png'), url('images/Extra/Cupholder.png'), url('images/Tires/Racin.png'), url('images/Body/Blu.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+}
+
+function totalPackage(){
+    var image = document.getElementById('image');
+    image.style.background = "url('images/Empty.png'), url('images/Tires/Basic.png'), url('images/Body/Whi.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+    totalCost = 2720;
+    document.getElementById("price").textContent = "Total: $" + totalCost;
+    document.getElementById("item_list").innerHTML = "Silver $100 \<br/\> Racing $300 \<br/\> V8 $1200 \<br/\> Speaker $120 \<br/\> GPS $120 \<br/\> LEDStrip $80\<br/\> Headlights $80\<br/\> Cupholder $40\<br/\> Mirros $40\<br/\> Tassels $20\<br/\> Bell $20";
+    image.style.background = "url('images/Empty.png'), url('images/Extra/Headlights.png'), url('images/Extra/Tassels.png'), url('images/Extra/Bell.png'), url('images/Extra/Mirrors.png'), url('images/Extra/LEDStrip.png'), url('images/Extra/GPS.png'), url('images/Extra/Speaker.png'), url('images/Extra/Cupholder.png'), url('images/Tires/Racin.png'), url('images/Body/Sil.png')";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
 }
