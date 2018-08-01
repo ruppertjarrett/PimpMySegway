@@ -1,7 +1,19 @@
+window.addEventListener("load", load);
 document.getElementById("segway").innerHTML = '<div id="content"></div>';
 add_nav();
 add_containers();
 add_footer();
+
+var totalCost = 0;
+
+function load(evt) {
+    totalCost = 600;
+    var image = document.getElementById('image');
+    image.style.background = "url('images/Empty.png'), url('images/Tires/Basic.png'), url('images/Body/Whi.png')";
+    document.getElementById("price").textContent = "Total: $" + totalCost;
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundSize = "cover";
+}
 
 function add_nav() {
     var nav = document.createElement("ul");
@@ -88,7 +100,7 @@ function add_containers() {
     leftContainer.setAttribute("id", "left_Container");
     container.appendChild(leftContainer);
 
-    var image = document.createElement("img");
+    var image = document.createElement("div");
     image.setAttribute("id", "image");
     leftContainer.appendChild(image);
 
@@ -110,34 +122,6 @@ function add_containers() {
     var options = document.createElement("div");
     options.setAttribute("id", "options");
     rightContainer.appendChild(options);
-
-    var colors = document.createElement("div");
-    colors.setAttribute("id", "colors");
-    rightContainer.appendChild(colors);
-    var color_placeholder = document.createTextNode("color options go here");
-    var colors_div = document.getElementById("colors");
-    colors_div.appendChild(color_placeholder);
-
-    var tires = document.createElement("div");
-    tires.setAttribute("id", "tires");
-    rightContainer.appendChild(tires);
-    var tires_placeholder = document.createTextNode("tire options go here");
-    var tires_div = document.getElementById("tires");
-    tires_div.appendChild(tires_placeholder);
-
-    var engines = document.createElement("div");
-    engines.setAttribute("id", "engines");
-    rightContainer.appendChild(engines);
-    var engines_placeholder = document.createTextNode("engines options go here");
-    var engines_div = document.getElementById("engines");
-    engines_div.appendChild(engines_placeholder);
-
-    var other = document.createElement("div");
-    other.setAttribute("id", "other");
-    rightContainer.appendChild(other);
-    var other_placeholder = document.createTextNode("other options go here");
-    var other_div = document.getElementById("other");
-    other_div.appendChild(other_placeholder);
 }
 
 function add_footer() {
@@ -179,4 +163,139 @@ function add_footer() {
     var checkout_placeholder = document.createTextNode("checkout goes here");
     var checkout_div = document.getElementById("checkout");
     checkout_div.appendChild(checkout_placeholder);
+}
+
+var Options = document.getElementById('options');
+var BtnId = ['Red', 'White', 'Blue', 'Silver', 'SafetyOrange', 'OffRoad', 'Basic', 'Racing', 'V2', 'V4', 'V8', 'Tassels', 'Mirrors', 'LEDStrip', 'Speaker', 'Cupholder', 'GPS', 'Bell', 'Headlights'];
+var Btns = [];
+var overallCount = 0;
+var colorCount = 0;
+var tireCount = 0;
+var engineCount = 0;
+var extrasCount = 0;
+var container;
+var namePlate;
+
+BtnId.forEach(buildButton);
+BtnId.forEach(giveEventListener);
+
+function buildButton(item, index, arr) {
+    if (overallCount == 0 && colorCount == 0) {
+        container = document.createElement('div');
+        container.setAttribute('id', 'colors');
+        namePlate = document.createElement('p');
+        namePlate.innerHTML = `Color :`;
+        container.appendChild(namePlate);
+        Options.appendChild(container);
+    } else if (overallCount == 0 && tireCount == 0) {
+        container = document.createElement('div');
+        container.setAttribute('id', 'tires');
+        namePlate = document.createElement('p');
+        namePlate.innerHTML = `Tire :`;
+        container.appendChild(namePlate);
+        Options.appendChild(container);
+    } else if (overallCount == 0 && engineCount == 0) {
+        container = document.createElement('div');
+        container.setAttribute('id', 'engines');
+        namePlate = document.createElement('p');
+        namePlate.innerHTML = `Engine :`;
+        container.appendChild(namePlate);
+        Options.appendChild(container);
+    } else if (overallCount == 0 && extrasCount == 0) {
+        container = document.createElement('div');
+        container.setAttribute('id', 'Extras');
+        namePlate = document.createElement('p');
+        namePlate.innerHTML = `Extras :`;
+        container.appendChild(namePlate);
+        Options.appendChild(container);
+    }
+    Btns[index] = document.createElement('div');
+    Btns[index].setAttribute('id', item);
+    if (document.getElementById("colors") != null && colorCount < 6) {
+        Btns[index].setAttribute('class', 'btn color');
+        colorCount++;
+    } else if (document.getElementById("tires") != null && tireCount < 4) {
+        Btns[index].setAttribute('class', 'btn tire');
+        tireCount++;
+    } else if (document.getElementById("engines") != null && engineCount < 4) {
+        Btns[index].setAttribute('class', 'btn engine');
+        engineCount++;
+    } else if (document.getElementById("extras") != null && extrasCount < 8) {
+        Btns[index].setAttribute('class', 'btn extra');
+        extrasCount++;
+    }
+    Options.appendChild(Btns[index]);
+    overallCount++;
+    if (colorCount == 5) {
+        Options.innerHTML += '<br />';
+        overallCount = 0;
+        colorCount = 6;
+    } else if (tireCount == 3) {
+        Options.innerHTML += '<br />';
+        overallCount = 0;
+        tireCount = 4;
+    } else if (engineCount == 3) {
+        Options.innerHTML += '<br />';
+        overallCount = 0;
+        engineCount = 4;
+    } else if (extrasCount == 8) {
+        Options.innerHTML += '<br />';
+        overallCount = 0;
+        extrasCount = 9;
+    }
+}
+
+function giveEventListener(item, index, arr) {
+    document.getElementById(item).addEventListener('click', optionClick);
+}
+
+var image;
+var currentBtn;
+var currentParent;
+var option;
+var area;
+
+function optionClick(evt) {
+    currentBtn = evt.target.id;
+    option = currentBtn;
+    imgURL;
+    if (option == 'Red' || option == 'White' || option == 'Silver' || option == 'Blue' || option == 'SafetyOrange') {
+        color = image.style.background.substring(image.style.background.length - 28, image.style.background.length);
+        if (option == 'Red') {
+            imgURL = 'Red';
+        } else if (option == 'White') {
+            imgURL = 'Whi';
+        } else if (option == 'Blue') {
+            imgURL = 'Blu';
+        } else if (option == 'Silver') {
+            imgURL = 'Sil';
+        } else if (option == 'SafetyOrange') {
+            imgURL = 'Ora';
+        }
+        image.style.background.replace(color, `, url('images/Body/${imgURL}.png)`);
+    } else if (option == 'OffRoad' || option == 'Basic' || option == 'Racing') {
+        tire = image.style.background.substring(image.style.background.length - 59, image.style.background.length - 28);
+        if (option == 'Basic') {
+            imgURL = 'Basic';
+        } else if (option == 'OffRoad') {
+            imgURL = 'OffRd';
+        } else if (option == 'Racing') {
+            imgURL = 'Racin';
+        }
+        image.style.background.replace(tire, `, url('images/Tires/${imgURL}.png)`);
+    } else if (option == 'V2' || option == 'V4' || option == 'V8') {
+        if (option == 'V2') {
+            cost = 300
+        } else if (option == 'V4') {
+            cost = 600
+        } else if (option == 'V8') {
+            cost = 1200
+        }
+    } else {
+        imgURL = option;
+        image.style.background += `, url('images/Extra/${imgURL}.png)`;
+    }
+    document.getElementById("item_list").innerHTML += `${option} $${cost} \<br /\>`;
+    totalCost += cost;
+    document.getElementById("price").textContent = "Total: $" + totalCost;
 }

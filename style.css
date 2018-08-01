@@ -106,6 +106,16 @@ body {
     flex: 4;
 }
 
+html {}
+
+#image {
+    height: 463px;
+    width: 333px;
+}
+
+
 /*Media Queries*/
-@media all and (max-width: 900px){}
-@media all and (max-width: 650px){}
+
+@media all and (max-width: 900px) {}
+
+@media all and (max-width: 650px) {}
