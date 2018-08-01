@@ -1,4 +1,5 @@
 /*Main CSS*/
+
 html {
     font-family: 'Roboto', sans-serif;
     background-color: #2F4858;
@@ -12,10 +13,9 @@ li {
     font-size: 20pt;
     color: rgb(112, 112, 112);
     font-weight: bold;
-
 }
 
-li > div {
+li>div {
     height: 100%;
     text-align: center;
     vertical-align: bottom;
@@ -26,11 +26,19 @@ body {
     margin: 0px;
 }
 
-#preset_1, #preset_2, #preset_3, #preset_4, #preset_5{
+#preset_1,
+#preset_2,
+#preset_3,
+#preset_4,
+#preset_5 {
     transition: 0.4s;
 }
 
-#preset_1:hover, #preset_2:hover, #preset_3:hover, #preset_4:hover, #preset_5:hover {
+#preset_1:hover,
+#preset_2:hover,
+#preset_3:hover,
+#preset_4:hover,
+#preset_5:hover {
     color: black;
     cursor: pointer;
 }
@@ -40,7 +48,7 @@ body {
 }
 
 #logo {
-    width: 50%;
+    width: 75%;
     height: auto;
 }
 
@@ -57,7 +65,8 @@ body {
     padding: 10px 15px;
 }
 
-#container, #footer {
+#container,
+#footer {
     display: flex;
     flex-direction: row;
     margin: 15px;
@@ -65,45 +74,59 @@ body {
 }
 
 #left_container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex: 4;
 }
 
 #middle_container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex: 2;
 }
 
 #right_container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex: 6;
 }
 
 #options {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 10px;
     margin: 10px;
 }
 
-#colors, #tires, #engines, #other{
+#colors,
+#tires,
+#engines,
+#extras,
+#price {
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
     background-color: #D7F5E0;
 }
 
+#price{
+    padding: 10px 20px;
+}
+
 #left_footer {
-    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin: 10px;
     flex: 4;
 }
 
 #middle_footer {
-    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin: 10px;
     flex: 8;
 }
 
 #right_footer {
-    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin: 10px;
     flex: 4;
 }
 
@@ -112,9 +135,67 @@ body {
     width: 333px;
 }
 
+#footer>div {
+    text-align: center;
+}
+
+.btn {
+    background-color: #989898;
+    border: 1px solid black;
+    color: black;
+    margin: 7px;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
 
 /*Media Queries*/
+/* IPad Size (Aka Ignore for now) */
+@media all and (max-width: 900px) {
+    li {
+        font-size: 18px;
+        transition: 0s;
+    }
 
-@media all and (max-width: 900px) {}
 
-@media all and (max-width: 650px) {}
+}
+/* Mobile Size (The one to focus on for the grade) */
+@media all and (max-width: 650px) {
+    #container, #footer{
+        flex-direction: column;
+        padding: 0;
+    }
+
+    #image{
+        margin: auto;
+    }
+
+    #nav {
+        flex-direction: column;
+    }
+
+    #logo {
+        display: block;
+        width: 18%;
+        margin: auto;
+    }
+
+    #deal {
+        display: none;
+    }
+
+    li {
+        width: unset;
+    }
+
+    li > div {
+        padding: 5px;
+    }
+}
