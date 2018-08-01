@@ -14,12 +14,13 @@ function add_nav() {
     var nav_bar = document.getElementById("nav");
     nav_bar.appendChild(li_image);
 
-    var logo = document.createElement("div");
+    var logo = document.createElement("img");
     logo.setAttribute("id", "logo");
+    logo.setAttribute("src", "images/segway_icon.png")
     li_image.appendChild(logo);
-    var logo_placeholder = document.createTextNode("logo goes here");
-    var logo_image = document.getElementById("logo");
-    logo_image.appendChild(logo_placeholder);
+    // var logo_placeholder = document.createTextNode("logo goes here");
+    // var logo_image = document.getElementById("logo");
+    // logo_image.appendChild(logo_placeholder);
 
     var li_1 = document.createElement("li");
     li_1.setAttribute("id", "li_1");
