@@ -1,4 +1,5 @@
 /*Main CSS*/
+
 html {
     font-family: 'Roboto', sans-serif;
     background-color: #2F4858;
@@ -15,7 +16,7 @@ li {
 
 }
 
-li > div {
+li>div {
     height: 100%;
     text-align: center;
     vertical-align: bottom;
@@ -124,6 +125,21 @@ body {
 
 #footer > div {
     text-align: center;
+}
+.btn {
+    background-color: #989898;
+    border: 1px solid black;
+    color: black;
+    margin: 7px;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
 }
 
 
