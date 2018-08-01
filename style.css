@@ -13,7 +13,6 @@ li {
     font-size: 20pt;
     color: rgb(112, 112, 112);
     font-weight: bold;
-
 }
 
 li>div {
@@ -27,11 +26,19 @@ body {
     margin: 0px;
 }
 
-#preset_1, #preset_2, #preset_3, #preset_4, #preset_5{
+#preset_1,
+#preset_2,
+#preset_3,
+#preset_4,
+#preset_5 {
     transition: 0.4s;
 }
 
-#preset_1:hover, #preset_2:hover, #preset_3:hover, #preset_4:hover, #preset_5:hover {
+#preset_1:hover,
+#preset_2:hover,
+#preset_3:hover,
+#preset_4:hover,
+#preset_5:hover {
     color: black;
     cursor: pointer;
 }
@@ -58,7 +65,8 @@ body {
     padding: 10px 15px;
 }
 
-#container, #footer {
+#container,
+#footer {
     display: flex;
     flex-direction: row;
     margin: 15px;
@@ -86,7 +94,11 @@ body {
     margin: 10px;
 }
 
-#colors, #tires, #engines, #Extras, #price{
+#colors,
+#tires,
+#engines,
+#extras,
+#price {
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
@@ -113,9 +125,10 @@ body {
     width: 333px;
 }
 
-#footer > div {
+#footer>div {
     text-align: center;
 }
+
 .btn {
     background-color: #989898;
     border: 1px solid black;

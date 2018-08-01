@@ -225,7 +225,7 @@ function buildButton(item, index, arr) {
         extrasCount++;
     }
     Btns[index].innerHTML = BtnId[index];
-    Options.appendChild(Btns[index]);
+    container.appendChild(Btns[index]);
     overallCount++;
     if (colorCount == 5) {
         Options.innerHTML += '<br />';
