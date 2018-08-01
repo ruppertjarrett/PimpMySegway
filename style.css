@@ -9,7 +9,9 @@ li {
     margin: 0px 5px;
     padding: 5px 10px;
     font-size: 16pt;
+    color: rgb(112, 112, 112);
     font-weight: bold;
+
 }
 
 li > div {
@@ -23,11 +25,17 @@ body {
     margin: 0px;
 }
 
+#preset_1, #preset_2, #preset_3, #preset_4, #preset_5{
+    transition: 0.4s;
+}
+
+#preset_1:hover, #preset_2:hover, #preset_3:hover, #preset_4:hover, #preset_5:hover {
+    color: black;
+    cursor: pointer;
+}
+
 #li_image {
-    width: 40%;
     height: auto;
-    margin: 0px 0px 0px 15px;
-    padding-top: 5px;
 }
 
 #logo {
@@ -48,7 +56,7 @@ body {
     padding: 10px 15px;
 }
 
-#container {
+#container, #footer {
     display: flex;
     flex-direction: row;
     margin: 15px;
@@ -56,15 +64,46 @@ body {
 }
 
 #left_container {
-    width: 20%;
+    border: 1px solid black;
+    flex: 4;
 }
 
 #middle_container {
-    width: 100%;
+    border: 1px solid black;
+    flex: 2;
 }
 
 #right_container {
-    width: 100%;
+    border: 1px solid black;
+    flex: 6;
+}
+
+#options {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+#colors, #tires, #engines, #other{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #D7F5E0;
+}
+
+#left_footer {
+    border: 1px solid black;
+    flex: 4;
+}
+
+#middle_footer {
+    border: 1px solid black;
+    flex: 8;
+}
+
+#right_footer {
+    border: 1px solid black;
+    flex: 4;
 }
 
 /*Media Queries*/
