@@ -65,27 +65,27 @@ body {
 }
 
 #left_container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex: 4;
 }
 
 #middle_container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex: 2;
 }
 
 #right_container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex: 6;
 }
 
 #options {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 10px;
     margin: 10px;
 }
 
-#colors, #tires, #engines, #other{
+#colors, #tires, #engines, #Extras, #price{
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
@@ -110,6 +110,10 @@ body {
 #image {
     height: 463px;
     width: 333px;
+}
+
+#footer > div {
+    text-align: center;
 }
 
 
